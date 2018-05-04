@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  before_action :view_own_profile, only: [:show]
 
   # GET /profiles
   # GET /profiles.json
@@ -10,12 +11,12 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+    
   end
 
   # GET /profiles/new
   def new
     @profile = Profile.new
-
   end
 
   # GET /profiles/1/edit
@@ -63,7 +64,11 @@ class ProfilesController < ApplicationController
   end
 
   def view_own_profile
+    @user = User.find(params[:id])
     
+    if current_user != @user
+      redirect_to root_path, notice: "You can't view someone else's profile"
+    end
   end
 
   private

@@ -61,4 +61,5 @@
 </p>
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+<%= link_to 'Back', profiles_path %> |
+<%= link_to 'Destroy', @profile, method: :delete, data: { confirm: 'Are you sure?' } %>
