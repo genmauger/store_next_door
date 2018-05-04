@@ -15,6 +15,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/new
   def new
     @profile = Profile.new
+
   end
 
   # GET /profiles/1/edit
@@ -59,6 +60,10 @@ class ProfilesController < ApplicationController
       format.html { redirect_to profiles_url, notice: 'Profile was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def view_own_profile
+    
   end
 
   private
