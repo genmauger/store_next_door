@@ -52,8 +52,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :image_data %>
-    <%= form.hidden_field :image, value: @photo.cached_image_data %>
+    <%= form.label :image %>
+    <%= form.hidden_field :image, value: @photo&.cached_image_data %>
     <%= form.file_field :image, id: :photo_image_data %>
   </div>
 
