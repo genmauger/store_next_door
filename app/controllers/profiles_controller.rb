@@ -21,7 +21,6 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
-    @photo = Photo.new
   end
 
   # POST /profiles
