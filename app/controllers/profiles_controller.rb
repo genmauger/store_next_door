@@ -12,7 +12,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/1.json
   def show
     # @photos = Photo.find(params[:id])
-
+    @user_id = current_user.id
   end
 
   # GET /profiles/new
