@@ -17,3 +17,14 @@
 .style_image {
   width: 80px;
 }
+
+.nav_style_image {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 80px;
+}
+
+.show_text > p {
+
+}

@@ -1,62 +1,64 @@
-<p id="notice"><%= notice %></p>
+<div class="show_text">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @profile.first_name %>
-</p>
+  <p>
+    <strong>First name:</strong>
+    <%= @profile.first_name %>
+  </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @profile.last_name %>
-</p>
+  <p>
+    <strong>Last name:</strong>
+    <%= @profile.last_name %>
+  </p>
 
-<p>
-  <strong>Mobile:</strong>
-  <%= @profile.mobile %>
-</p>
+  <p>
+    <strong>Mobile:</strong>
+    <%= @profile.mobile %>
+  </p>
 
-<p>
-  <strong>Street address:</strong>
-  <%= @profile.street_address %>
-</p>
+  <p>
+    <strong>Street address:</strong>
+    <%= @profile.street_address %>
+  </p>
 
-<p>
-  <strong>Suburb:</strong>
-  <%= @profile.suburb %>
-</p>
+  <p>
+    <strong>Suburb:</strong>
+    <%= @profile.suburb %>
+  </p>
 
-<p>
-  <strong>Postcode:</strong>
-  <%= @profile.postcode %>
-</p>
+  <p>
+    <strong>Postcode:</strong>
+    <%= @profile.postcode %>
+  </p>
 
-<p>
-  <strong>Country:</strong>
-  <%= @profile.country %>
-</p>
+  <p>
+    <strong>Country:</strong>
+    <%= @profile.country %>
+  </p>
 
-<p>
-  <strong>Avatar:</strong>
-  <%= image_tag @profile.image_url(:medium), :class => "style_image" %>
-</p>
+  <p>
+    <strong>Avatar:</strong>
+    <%= image_tag @profile.image_url(:medium), :class => "style_image" %>
+  </p>
 
-<p>
-  <strong>Latitude:</strong>
-  <%= @profile.latitude %>
-</p>
+  <p>
+    <strong>Latitude:</strong>
+    <%= @profile.latitude %>
+  </p>
 
-<p>
-  <strong>Longitude:</strong>
-  <%= @profile.longitude %>
-</p>
+  <p>
+    <strong>Longitude:</strong>
+    <%= @profile.longitude %>
+  </p>
 
-<p>
-  <strong>Location</strong>
-    <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@profile.latitude},#{@profile.longitude}&zoom=18&size=600x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:red%7Clabel:1%7C#{@profile.latitude},#{@profile.longitude}"
-  %>
-</p>
+  <p>
+    <strong>Location</strong>
+      <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@profile.latitude},#{@profile.longitude}&zoom=18&size=600x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:red%7Clabel:1%7C#{@profile.latitude},#{@profile.longitude}"
+    %>
+  </p>
+</div>
 
 
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %> |
-<%= link_to 'Destroy', @profile, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'Edit', edit_profile_path(@profile) %> |
+  <%= link_to 'Back', profiles_path %> |
+  <%= link_to 'Destroy', @profile, method: :delete, data: { confirm: 'Are you sure?' } %>

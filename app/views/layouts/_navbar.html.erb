@@ -1,6 +1,7 @@
 <% if user_signed_in? %>
-  <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
   <%= current_user.email %>
+  <%= image_tag current_user.profile.image_url(:medium), :class => "nav_style_image" %>
+  <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
   <% else %>
     <%= link_to 'Login', new_user_session_path %>
 <% end  %>
