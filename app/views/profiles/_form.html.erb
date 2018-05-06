@@ -47,24 +47,9 @@
   </div>
 
   <div class="field">
-    <%= form.label :mobile %>
-    <%= form.text_area :mobile, id: :profile_mobile %>
-  </div>
-
-  <div class="field">
     <%= form.label :image %>
     <%= form.hidden_field :image, value: @profile.cached_image_data %>
     <%= form.file_field :image, id: :photo_image_data %>
-  </div>
-
-  <div class="field">
-    <%= form.label :latitude %>
-    <%= form.text_field :latitude, id: :profile_latitude %>
-  </div>
-
-  <div class="field">
-    <%= form.label :longitude %>
-    <%= form.text_field :longitude, id: :profile_longitude %>
   </div>
 
   <div class="field">

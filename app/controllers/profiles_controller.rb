@@ -28,6 +28,7 @@ class ProfilesController < ApplicationController
   # POST /profiles.json
   def create
     @profile = Profile.new(profile_params)
+    @user_id = current_user.id
 
     respond_to do |format|
       if @profile.save
