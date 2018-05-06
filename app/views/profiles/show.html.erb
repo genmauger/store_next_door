@@ -36,12 +36,7 @@
 </p>
 
 <p>
-  <strong>Mobile:</strong>
-  <%= @profile.mobile %>
-</p>
-
-<p>
-  <strong>Image data:</strong>
+  <strong>Avatar:</strong>
   <%= image_tag @profile.image_url(:medium), :class => "style_image" %>
 </p>
 
@@ -56,9 +51,11 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @profile.user %>
+  <strong>Location</strong>
+    <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@profile.latitude},#{@profile.longitude}&zoom=18&size=600x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:red%7Clabel:1%7C#{@profile.latitude},#{@profile.longitude}"
+  %>
 </p>
+
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
 <%= link_to 'Back', profiles_path %> |
