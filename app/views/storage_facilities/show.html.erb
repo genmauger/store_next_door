@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Street address:</strong>
+  <%= @storage_facility.street_address %>
+</p>
+
+<p>
+  <strong>Suburb:</strong>
+  <%= @storage_facility.suburb %>
+</p>
+
+<p>
+  <strong>Postcode:</strong>
+  <%= @storage_facility.postcode %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @storage_facility.state %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @storage_facility.country %>
+</p>
+
+<p>
+  <strong>Unlisted at:</strong>
+  <%= @storage_facility.unlisted_at %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @storage_facility.longitude %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @storage_facility.latitude %>
+</p>
+
+<p>
+  <strong>Image data:</strong>
+  <%= @storage_facility.image_data %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @storage_facility.user %>
+</p>
+
+<%= link_to 'Edit', edit_storage_facility_path(@storage_facility) %> |
+<%= link_to 'Back', storage_facilities_path %>

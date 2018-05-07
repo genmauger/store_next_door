@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Storage Facilities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Street address</th>
+      <th>Suburb</th>
+      <th>Postcode</th>
+      <th>State</th>
+      <th>Country</th>
+      <th>Unlisted at</th>
+      <th>Longitude</th>
+      <th>Latitude</th>
+      <th>Image data</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @storage_facilities.each do |storage_facility| %>
+      <tr>
+        <td><%= storage_facility.street_address %></td>
+        <td><%= storage_facility.suburb %></td>
+        <td><%= storage_facility.postcode %></td>
+        <td><%= storage_facility.state %></td>
+        <td><%= storage_facility.country %></td>
+        <td><%= storage_facility.unlisted_at %></td>
+        <td><%= storage_facility.longitude %></td>
+        <td><%= storage_facility.latitude %></td>
+        <td><%= storage_facility.image_data %></td>
+        <td><%= storage_facility.user %></td>
+        <td><%= link_to 'Show', storage_facility %></td>
+        <td><%= link_to 'Edit', edit_storage_facility_path(storage_facility) %></td>
+        <td><%= link_to 'Destroy', storage_facility, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Storage Facility', new_storage_facility_path %>

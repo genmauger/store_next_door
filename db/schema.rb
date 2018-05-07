@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180504010139) do
+ActiveRecord::Schema.define(version: 20180507035034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "meetings", force: :cascade do |t|
+    t.string "name"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.text "first_name"
@@ -30,6 +38,22 @@ ActiveRecord::Schema.define(version: 20180504010139) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "storage_facilities", force: :cascade do |t|
+    t.text "street_address"
+    t.text "suburb"
+    t.text "postcode"
+    t.text "state"
+    t.text "country"
+    t.datetime "unlisted_at"
+    t.decimal "longitude"
+    t.decimal "latitude"
+    t.text "image_data"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_storage_facilities_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -50,4 +74,5 @@ ActiveRecord::Schema.define(version: 20180504010139) do
   end
 
   add_foreign_key "profiles", "users"
+  add_foreign_key "storage_facilities", "users"
 end
