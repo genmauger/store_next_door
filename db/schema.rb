@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180507035034) do
+ActiveRecord::Schema.define(version: 20180507141219) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "facility_spaces", force: :cascade do |t|
+    t.text "height"
+    t.text "width"
+    t.text "length"
+    t.decimal "rate"
+    t.text "image_data"
+    t.bigint "storage_facility_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["storage_facility_id"], name: "index_facility_spaces_on_storage_facility_id"
+  end
 
   create_table "meetings", force: :cascade do |t|
     t.string "name"
@@ -73,6 +85,7 @@ ActiveRecord::Schema.define(version: 20180507035034) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "facility_spaces", "storage_facilities"
   add_foreign_key "profiles", "users"
   add_foreign_key "storage_facilities", "users"
 end
