@@ -12,12 +12,6 @@ class StorageFacilitiesController < ApplicationController
   # GET /storage_facilities/1.json
   def show
     #Only show uploads made by that user currently signed in
-    # @storage = StorageFacility.find_by(current_user)
-    # if storage.present?
-    #   authorize storage
-    # else
-    #   skip_authorization
-    # end 
   end
 
   # GET /storage_facilities/new
