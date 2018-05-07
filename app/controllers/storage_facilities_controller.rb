@@ -27,7 +27,7 @@ class StorageFacilitiesController < ApplicationController
   # POST /storage_facilities.json
   def create
     @storage_facility = StorageFacility.new(storage_facility_params)
-    @storage_facility.user = current_user
+    @storage_facility.first.id = current_user
     respond_to do |format|
       if @storage_facility.save
         format.html { redirect_to @storage_facility, notice: 'Storage facility was successfully created.' }

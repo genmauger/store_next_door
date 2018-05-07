@@ -22,7 +22,7 @@
         <td><%= facility_space.width %></td>
         <td><%= facility_space.length %></td>
         <td><%= facility_space.rate %></td>
-        <td><%= facility_space.image_data %></td>
+        <td><%= image_tag facility_space.image_url(:medium), :class => "style_image" %></td>
         <td><%= facility_space.storage_facility %></td>
         <td><%= link_to 'Show', facility_space %></td>
         <td><%= link_to 'Edit', edit_facility_space_path(facility_space) %></td>

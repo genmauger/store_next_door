@@ -25,7 +25,7 @@ class FacilitySpacesController < ApplicationController
   # POST /facility_spaces.json
   def create
     @facility_space = FacilitySpace.new(facility_space_params)
-
+    @facility_space.user = current_user
     respond_to do |format|
       if @facility_space.save
         format.html { redirect_to @facility_space, notice: 'Facility space was successfully created.' }
@@ -69,6 +69,6 @@ class FacilitySpacesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def facility_space_params
-      params.require(:facility_space).permit(:height, :width, :length, :rate, :image_data, :storage_facility_id)
+      params.require(:facility_space).permit(:height, :width, :length, :rate, :image, :storage_facility_id)
     end
 end
