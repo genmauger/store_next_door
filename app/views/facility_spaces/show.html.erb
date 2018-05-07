@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @facility_space.height %>
+</p>
+
+<p>
+  <strong>Width:</strong>
+  <%= @facility_space.width %>
+</p>
+
+<p>
+  <strong>Length:</strong>
+  <%= @facility_space.length %>
+</p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= @facility_space.rate %>
+</p>
+
+<p>
+  <strong>Image data:</strong>
+  <%= @facility_space.image_data %>
+</p>
+
+<p>
+  <strong>Storage facility:</strong>
+  <%= @facility_space.storage_facility %>
+</p>
+
+<%= link_to 'Edit', edit_facility_space_path(@facility_space) %> |
+<%= link_to 'Back', facility_spaces_path %>

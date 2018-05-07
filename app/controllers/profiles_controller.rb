@@ -43,14 +43,14 @@ class ProfilesController < ApplicationController
   # PATCH/PUT /profiles/1.json
   def update
 
-    @profile = Profile.find(params[:id])
-      authorize @profile
-      if @profile.update(profile_params)
-        redirect_to @profile
-      else
-        render :show
-      end
-    end
+    # @profile = Profile.find(params[:id])
+    #   authorize @profile
+    #   if @profile.update(profile_params)
+    #     redirect_to @profile
+    #   else
+    #     render :show
+    #   end
+    # end
 
     respond_to do |format|
       if @profile.update(profile_params)
@@ -91,4 +91,4 @@ class ProfilesController < ApplicationController
     def profile_params
       params.require(:profile).permit(:first_name, :last_name, :mobile, :street_address, :suburb, :postcode, :country, :mobile, :image, :latitude, :longitude, :user_id)
     end
-
+  end
