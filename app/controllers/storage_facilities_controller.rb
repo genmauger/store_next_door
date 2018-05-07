@@ -1,7 +1,7 @@
 class StorageFacilitiesController < ApplicationController
   before_action :set_storage_facility, only: [:show, :edit, :update, :destroy]
   before_action :view_own_profile, only: [:show]
-  
+
   # GET /storage_facilities
   # GET /storage_facilities.json
   def index
@@ -26,7 +26,7 @@ class StorageFacilitiesController < ApplicationController
   # POST /storage_facilities.json
   def create
     @storage_facility = StorageFacility.new(storage_facility_params)
-
+    @storage_facility.user = current_user
     respond_to do |format|
       if @storage_facility.save
         format.html { redirect_to @storage_facility, notice: 'Storage facility was successfully created.' }
@@ -59,6 +59,14 @@ class StorageFacilitiesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to storage_facilities_url, notice: 'Storage facility was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def view_own_profile
+    @user = User.find(params[:id])
+    
+    if current_user != @user
+      redirect_to root_path, notice: "You can't view someone else's profile"
     end
   end
 

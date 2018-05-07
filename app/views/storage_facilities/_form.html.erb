@@ -37,11 +37,6 @@
   </div>
 
   <div class="field">
-    <%= form.label :unlisted_at %>
-    <%= form.datetime_select :unlisted_at, id: :storage_facility_unlisted_at %>
-  </div>
-
-  <div class="field">
     <%= form.label :longitude %>
     <%= form.text_field :longitude, id: :storage_facility_longitude %>
   </div>
@@ -52,13 +47,9 @@
   </div>
 
   <div class="field">
-    <%= form.label :image_data %>
-    <%= form.text_area :image_data, id: :storage_facility_image_data %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, id: :storage_facility_user_id %>
+    <%= form.label :image %>
+    <%= form.hidden_field :image, value: @storage_facility.cached_image_data %>
+    <%= form.file_field :image, id: :photo_image_data %>
   </div>
 
   <div class="actions">
