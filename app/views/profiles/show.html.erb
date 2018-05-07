@@ -53,7 +53,7 @@
 
   <p>
     <strong>Location</strong>
-      <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@profile.latitude},#{@profile.longitude}&zoom=18&size=600x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:red%7Clabel:1%7C#{@profile.latitude},#{@profile.longitude}"
+      <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@profile.latitude},#{@profile.longitude}&zoom=18&size=600x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:red%7Clabel:1%7C#{@profile.latitude},#{@profile.longitude}key=AIzaSyD6nArhLSYswuFWj3SzFWxQoXTizCHQUPU&callback=initMap"
     %>
   </p>
 </div>
