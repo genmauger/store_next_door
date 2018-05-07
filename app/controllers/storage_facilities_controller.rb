@@ -1,5 +1,6 @@
 class StorageFacilitiesController < ApplicationController
-  before_action :set_storage_facility, only: [:show, :edit, :update, :destroy]
+  before_action :set_storage_facility, only: [:show, :update, :destroy]
+  before_action :authenticate_user!, except: [:edit]
   # before_action :view_own_profile, only: [:edit]
 
   # GET /storage_facilities
@@ -27,7 +28,7 @@ class StorageFacilitiesController < ApplicationController
   # POST /storage_facilities.json
   def create
     @storage_facility = StorageFacility.new(storage_facility_params)
-    @storage_facility.first.id = current_user
+    @storage_facility.user = current_user
     respond_to do |format|
       if @storage_facility.save
         format.html { redirect_to @storage_facility, notice: 'Storage facility was successfully created.' }
