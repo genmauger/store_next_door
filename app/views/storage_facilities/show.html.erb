@@ -26,29 +26,14 @@
 </p>
 
 <p>
-  <strong>Unlisted at:</strong>
-  <%= @storage_facility.unlisted_at %>
-</p>
-
-<p>
-  <strong>Longitude:</strong>
-  <%= @storage_facility.longitude %>
-</p>
-
-<p>
-  <strong>Latitude:</strong>
-  <%= @storage_facility.latitude %>
-</p>
-
-<p>
   <strong>Image:</strong>
   <%= image_tag @storage_facility.image_url(:medium), :class => "style_image" %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @storage_facility.user %>
-</p>
+  <p>
+    <strong>Location</strong>
+      <%= image_tag ("https://maps.googleapis.com/maps/api/staticmap?center=#{@storage_facility.latitude},#{@storage_facility.longitude}&zoom=12&size=400x200&markers=color:red%7Clabel:#{@storage_facility.street_address.first}%7C#{@storage_facility.latitude},#{@storage_facility.longitude}&key=AIzaSyAY6SDoNkrh8eJwG-lZWKK1d2RiNvXbPmg") %>
+  </p>
 
 <%= link_to 'Edit', edit_storage_facility_path(@storage_facility) %> |
 <%= link_to 'Back', storage_facilities_path %>
