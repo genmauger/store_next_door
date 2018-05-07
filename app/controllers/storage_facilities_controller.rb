@@ -1,6 +1,7 @@
 class StorageFacilitiesController < ApplicationController
   before_action :set_storage_facility, only: [:show, :edit, :update, :destroy]
-
+  before_action :view_own_profile, only: [:show]
+  
   # GET /storage_facilities
   # GET /storage_facilities.json
   def index

@@ -42,4 +42,6 @@
 
 <br>
 
-<%= link_to 'New Storage Facility', new_storage_facility_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Storage Facility', new_storage_facility_path %>
+<% end %>
