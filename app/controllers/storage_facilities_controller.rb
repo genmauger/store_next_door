@@ -1,6 +1,6 @@
 class StorageFacilitiesController < ApplicationController
   before_action :set_storage_facility, only: [:show, :edit, :update, :destroy]
-  before_action :view_own_profile, only: [:show]
+  # before_action :view_own_profile, only: [:edit]
 
   # GET /storage_facilities
   # GET /storage_facilities.json
@@ -11,6 +11,13 @@ class StorageFacilitiesController < ApplicationController
   # GET /storage_facilities/1
   # GET /storage_facilities/1.json
   def show
+    #Only show uploads made by that user currently signed in
+    # @storage = StorageFacility.find_by(current_user)
+    # if storage.present?
+    #   authorize storage
+    # else
+    #   skip_authorization
+    # end 
   end
 
   # GET /storage_facilities/new
