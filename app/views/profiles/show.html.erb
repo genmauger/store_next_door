@@ -53,8 +53,7 @@
 
   <p>
     <strong>Location</strong>
-      <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@profile.latitude},#{@profile.longitude}&zoom=18&size=600x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:red%7Clabel:1%7C#{@profile.latitude},#{@profile.longitude}key=AIzaSyD6nArhLSYswuFWj3SzFWxQoXTizCHQUPU&callback=initMap"
-    %>
+      <%= image_tag ("https://maps.googleapis.com/maps/api/staticmap?center=#{@profile.latitude},#{@profile.longitude}&zoom=12&size=400x200&markers=color:red%7Clabel:#{@profile.first_name.first}%7C#{@profile.latitude},#{@profile.longitude}&key=AIzaSyAY6SDoNkrh8eJwG-lZWKK1d2RiNvXbPmg") %>
   </p>
 </div>
 
@@ -62,3 +61,5 @@
   <%= link_to 'Edit', edit_profile_path(@profile) %> |
   <%= link_to 'Back', profiles_path %> |
   <%= link_to 'Destroy', @profile, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+  <%# AIzaSyAY6SDoNkrh8eJwG-lZWKK1d2RiNvXbPmg %>
