@@ -6,20 +6,17 @@ class ProfilesController < ApplicationController
   # GET /profiles.json
   def index
     @profiles = Profile.all
-    @user_id = current_user.id
   end
 
   # GET /profiles/1
   # GET /profiles/1.json
   def show
     # @photos = Photo.find(params[:id])
-    @user_id = current_user.id
   end
 
   # GET /profiles/new
   def new
     @profile = Profile.new
-    @user_id = current_user.id
   end
 
   # GET /profiles/1/edit

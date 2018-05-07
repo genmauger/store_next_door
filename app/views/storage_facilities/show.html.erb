@@ -40,9 +40,10 @@
   <%= @storage_facility.latitude %>
 </p>
 
-  <p>
-    <strong>Avatar:</strong>
-  </p>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @storage_facility.image_url(:medium), :class => "style_image" %>
+</p>
 
 <p>
   <strong>User:</strong>

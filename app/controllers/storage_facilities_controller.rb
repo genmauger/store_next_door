@@ -78,6 +78,6 @@ class StorageFacilitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def storage_facility_params
-      params.require(:storage_facility).permit(:street_address, :suburb, :postcode, :state, :country, :unlisted_at, :longitude, :latitude, :image_data, :user_id)
+      params.require(:storage_facility).permit(:street_address, :suburb, :postcode, :state, :country, :unlisted_at, :longitude, :latitude, :image, :user_id)
     end
 end
