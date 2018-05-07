@@ -1,0 +1,56 @@
+<%= form_with(model: storage_facility, local: true) do |form| %>
+  <% if storage_facility.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(storage_facility.errors.count, "error") %> prohibited this storage_facility from being saved:</h2>
+
+      <ul>
+      <% storage_facility.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :street_address %>
+    <%= form.text_area :street_address, id: :storage_facility_street_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :suburb %>
+    <%= form.text_area :suburb, id: :storage_facility_suburb %>
+  </div>
+
+  <div class="field">
+    <%= form.label :postcode %>
+    <%= form.text_area :postcode, id: :storage_facility_postcode %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state %>
+    <%= form.text_area :state, id: :storage_facility_state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country %>
+    <%= form.text_area :country, id: :storage_facility_country %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :longitude, id: :storage_facility_longitude %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :latitude, id: :storage_facility_latitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.hidden_field :image, value: @storage_facility.cached_image_data %>
+    <%= form.file_field :image, id: :photo_image_data %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
