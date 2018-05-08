@@ -25,7 +25,8 @@ class FacilitySpacesController < ApplicationController
   # POST /facility_spaces.json
   def create
     @facility_space = FacilitySpace.new(facility_space_params)
-    @facility_space.user = StorageFacility.find(params[:id])
+    @facility_space.storage_facility = @storage_facility.user
+
     respond_to do |format|
       if @facility_space.save
         format.html { redirect_to @facility_space, notice: 'Facility space was successfully created.' }
