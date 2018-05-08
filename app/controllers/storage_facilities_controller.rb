@@ -62,6 +62,7 @@ class StorageFacilitiesController < ApplicationController
   # DELETE /storage_facilities/1
   # DELETE /storage_facilities/1.json
   def destroy
+    authorize @storage_facility
     @storage_facility.destroy
     respond_to do |format|
       format.html { redirect_to storage_facilities_url, notice: 'Storage facility was successfully destroyed.' }

@@ -1,4 +1,5 @@
 class StorageFacilityPolicy < ApplicationPolicy
+
   def index?
     true
   end
@@ -8,11 +9,11 @@ class StorageFacilityPolicy < ApplicationPolicy
   end
  
   def update?
-    return true if user.present? && storage_facility == user.storage_facility
+    return true if user.present? && user.storage_facility.include?(storage_facility)
   end
  
   def destroy?
-    return true if user.present? && storage_facility == user.storage_facility
+    return true if user.present? && user.storage_facility.include?(storage_facility)
   end
  
   private
