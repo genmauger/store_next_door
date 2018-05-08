@@ -1,10 +1,10 @@
 class FacilitySpacesController < ApplicationController
-  before_action :set_facility_space, only: [:show, :edit, :update, :destroy]
+  before_action :set_facility_space, only: [ :show, :edit, :update, :destroy]
 
   # GET /facility_spaces
   # GET /facility_spaces.json
   def index
-    @facility_spaces = FacilitySpace.all
+    @facility_space.storage_facility = StorageFacility.find(params[:storage_facility_id])
   end
 
   # GET /facility_spaces/1
@@ -15,6 +15,7 @@ class FacilitySpacesController < ApplicationController
   # GET /facility_spaces/new
   def new
     @facility_space = FacilitySpace.new
+    @facility_space.storage_facility = StorageFacility.find(params[:storage_facility_id])
   end
 
   # GET /facility_spaces/1/edit
@@ -25,7 +26,8 @@ class FacilitySpacesController < ApplicationController
   # POST /facility_spaces.json
   def create
     @facility_space = FacilitySpace.new(facility_space_params)
-    @facility_space.storage_facility = @storage_facility.user
+  
+    # @facility_space.storage_facility = current_storage
 
     respond_to do |format|
       if @facility_space.save

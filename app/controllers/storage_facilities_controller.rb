@@ -78,6 +78,10 @@ class StorageFacilitiesController < ApplicationController
     # end
   end
 
+  # def create_facilty_space(storage_facility)
+  #   new_facility_space_path(storage_facility)
+  # end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_storage_facility
