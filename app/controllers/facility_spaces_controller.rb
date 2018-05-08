@@ -1,10 +1,10 @@
 class FacilitySpacesController < ApplicationController
-  before_action :set_facility_space, only: [:show, :edit, :update, :destroy]
+  before_action :set_facility_space, only: [ :show, :edit, :update, :destroy]
 
   # GET /facility_spaces
   # GET /facility_spaces.json
   def index
-    @facility_spaces = FacilitySpace.all
+    @facility_space.storage_facility = StorageFacility.find(params[:storage_facility_id])
   end
 
   # GET /facility_spaces/1
@@ -15,6 +15,7 @@ class FacilitySpacesController < ApplicationController
   # GET /facility_spaces/new
   def new
     @facility_space = FacilitySpace.new
+    @facility_space.storage_facility = StorageFacility.find(params[:storage_facility_id])
   end
 
   # GET /facility_spaces/1/edit
@@ -25,6 +26,8 @@ class FacilitySpacesController < ApplicationController
   # POST /facility_spaces.json
   def create
     @facility_space = FacilitySpace.new(facility_space_params)
+  
+    # @facility_space.storage_facility = current_storage
 
     respond_to do |format|
       if @facility_space.save
@@ -69,6 +72,6 @@ class FacilitySpacesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def facility_space_params
-      params.require(:facility_space).permit(:height, :width, :length, :rate, :image_data, :storage_facility_id)
+      params.require(:facility_space).permit(:height, :width, :length, :rate, :image, :storage_facility_id)
     end
 end

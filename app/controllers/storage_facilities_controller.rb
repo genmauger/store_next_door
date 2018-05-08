@@ -1,6 +1,6 @@
 class StorageFacilitiesController < ApplicationController
-  before_action :set_storage_facility, only: [:show, :edit, :update, :destroy]
-  # before_action :view_own_profile, only: [:edit]
+  before_action :set_storage_facility, only: [:show, :update, :destroy]
+  # before_action :edit_own_properties, only: [:edit]
 
   # GET /storage_facilities
   # GET /storage_facilities.json
@@ -12,12 +12,6 @@ class StorageFacilitiesController < ApplicationController
   # GET /storage_facilities/1.json
   def show
     #Only show uploads made by that user currently signed in
-    # @storage = StorageFacility.find_by(current_user)
-    # if storage.present?
-    #   authorize storage
-    # else
-    #   skip_authorization
-    # end 
   end
 
   # GET /storage_facilities/new
@@ -27,13 +21,18 @@ class StorageFacilitiesController < ApplicationController
 
   # GET /storage_facilities/1/edit
   def edit
+    @storage_facility = StorageFacility.find(params[:id])
+    authorize @storage_facility
   end
 
   # POST /storage_facilities
   # POST /storage_facilities.json
   def create
+    authorize @storage_facility
+
     @storage_facility = StorageFacility.new(storage_facility_params)
     @storage_facility.user = current_user
+
     respond_to do |format|
       if @storage_facility.save
         format.html { redirect_to @storage_facility, notice: 'Storage facility was successfully created.' }
@@ -48,6 +47,7 @@ class StorageFacilitiesController < ApplicationController
   # PATCH/PUT /storage_facilities/1
   # PATCH/PUT /storage_facilities/1.json
   def update
+    authorize @storage_facility
     respond_to do |format|
       if @storage_facility.update(storage_facility_params)
         format.html { redirect_to @storage_facility, notice: 'Storage facility was successfully updated.' }
@@ -62,6 +62,7 @@ class StorageFacilitiesController < ApplicationController
   # DELETE /storage_facilities/1
   # DELETE /storage_facilities/1.json
   def destroy
+    authorize @storage_facility
     @storage_facility.destroy
     respond_to do |format|
       format.html { redirect_to storage_facilities_url, notice: 'Storage facility was successfully destroyed.' }
@@ -69,13 +70,17 @@ class StorageFacilitiesController < ApplicationController
     end
   end
 
-  def view_own_profile
-    @user = User.find(params[:id])
+  def edit_own_properties
+    # @storage_facility.user_id = current_user.id
     
-    if current_user != @user
-      redirect_to root_path, notice: "You can't view someone else's profile"
-    end
+    # if current_user != @storage_facility.user
+    #   redirect_to root_path, notice: "You can't edit someone else's profile"
+    # end
   end
+
+  # def create_facilty_space(storage_facility)
+  #   new_facility_space_path(storage_facility)
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

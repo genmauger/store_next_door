@@ -1,5 +1,6 @@
 class StorageFacility < ApplicationRecord
   belongs_to :user
+  has_many :facility_spaces
 
   validates :street_address, presence: true
 

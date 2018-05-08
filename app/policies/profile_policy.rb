@@ -4,20 +4,20 @@ class ProfilePolicy < ApplicationPolicy
   end
  
   def create?
-    user.present?
+    true if user.present? && user.profile.nil?
   end
  
   def update?
-    return true if user.present? && user == user.profile
+    true if user.present? && profile == user.profile
   end
  
   def destroy?
-    return true if user.present? && user == user.profile
+    true if user.present? && profile == user.profile
   end
  
   private
- 
-    def article
-      record
+
+    def profile
+      record # changes the namespace
     end
 end

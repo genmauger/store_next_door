@@ -32,13 +32,14 @@
   </div>
 
   <div class="field">
-    <%= form.label :image_data %>
-    <%= form.text_area :image_data, id: :facility_space_image_data %>
+    <%= form.label :avatar %>
+    <%= form.hidden_field :image, value: @facility_space.cached_image_data %>
+    <%= form.file_field :image, id: :photo_image_data %>
   </div>
 
   <div class="field">
     <%= form.label :storage_facility_id %>
-    <%= form.text_field :storage_facility_id, id: :facility_space_storage_facility_id %>
+    <%= form.text_field :storage_facility_id %>
   </div>
 
   <div class="actions">

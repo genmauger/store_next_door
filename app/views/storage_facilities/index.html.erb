@@ -24,8 +24,14 @@
         <td><%= storage_facility.country %></td>
         <td><%= image_tag storage_facility.image_url(:medium), :class => "style_image" %></td>
         <td><%= link_to 'Show', storage_facility %></td>
-        <td><%= link_to 'Edit', edit_storage_facility_path(storage_facility) %></td>
-        <td><%= link_to 'Destroy', storage_facility, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        <td>
+        <% if policy(storage_facility).update? %>
+        <%= link_to 'Edit', edit_storage_facility_path(storage_facility) %></td>
+        <td><%= link_to 'Destroy', storage_facility, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+        </td>
+        
       </tr>
     <% end %>
   </tbody>

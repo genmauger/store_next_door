@@ -16,16 +16,19 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/new
   def new
+    authorize @profile
     @profile = Profile.new
   end
 
   # GET /profiles/1/edit
   def edit
+    authorize @profile
   end
 
   # POST /profiles
   # POST /profiles.json
   def create
+    authorize @profile
     @profile = Profile.new(profile_params)
     @profile.user = current_user
     respond_to do |format|
@@ -53,6 +56,7 @@ class ProfilesController < ApplicationController
     # end
 
     respond_to do |format|
+      authorize @profile
       if @profile.update(profile_params)
         format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
         format.json { render :show, status: :ok, location: @profile }
