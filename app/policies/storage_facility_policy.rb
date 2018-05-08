@@ -8,16 +8,16 @@ class StorageFacilityPolicy < ApplicationPolicy
   end
  
   def update?
-    return true if user.present? && user == storage_facility.current_user
+    return true if user.present? && storage_facility == user.storage_facility
   end
  
   def destroy?
-    return true if user.present? && user == storage_facility.current_user
+    return true if user.present? && storage_facility == user.storage_facility
   end
  
   private
  
-    def article
+    def storage_facility
       record
     end
 end
