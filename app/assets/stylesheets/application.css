@@ -14,17 +14,37 @@
  *= require_self
  */
 
+ body { 
+   margin: 0; 
+   padding: 0; 
+   background: #E6E6E6;
+}
+
 .style_image {
   width: 80px;
 }
 
 .nav_style_image {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 80px;
+  top: 10px;
+  right: 10px;
+  width: 50px;
 }
 
-.show_text > p {
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  font-family: 'Gothic A1', sans-serif;
+  background: linear-gradient(to bottom, #004e6d 0%, #bde2f1 100%);
+  padding: 2em;
+}
 
+.navbar > a {
+  text-decoration: none;
+}
+
+.footer {
+  background-color: #47869F;
+  height: 2.5em;
 }

@@ -1,5 +1,7 @@
 class ChargesController < ApplicationController
   
+  #Need to require in info from other controller up top
+
   def new
     @email = current_user.email
   end
