@@ -5,7 +5,9 @@ class StorageFacilitiesController < ApplicationController
   # GET /storage_facilities
   # GET /storage_facilities.json
   def index
-    @storage_facilities = StorageFacility.all
+    if StorageFacility.find_by(user_id: current_user.id)
+      @storage_facilities = StorageFacility.where(user_id: current_user.id)
+    end
   end
 
   # GET /storage_facilities/1
@@ -71,11 +73,6 @@ class StorageFacilitiesController < ApplicationController
   end
 
   def edit_own_properties
-    # @storage_facility.user_id = current_user.id
-    
-    # if current_user != @storage_facility.user
-    #   redirect_to root_path, notice: "You can't edit someone else's profile"
-    # end
   end
 
   # def create_facilty_space(storage_facility)
