@@ -4,8 +4,17 @@ class FacilitySpacesController < ApplicationController
   # GET /facility_spaces
   # GET /facility_spaces.json
   def index
-    @facility_space.storage_facility = StorageFacility.find(params[:storage_facility_id])
+    if FacilitySpace.find_by(storage_facility_id: storage_facility.id)
+      @facility_spaces = StorageFacility.where(storage_facility_id: storage_facility.id)
+    end
   end
+
+
+  # def index
+  #   if StorageFacility.find_by(user_id: current_user.id)
+  #     @storage_facilities = StorageFacility.where(user_id: current_user.id)
+  #   end
+  # end
 
   # GET /facility_spaces/1
   # GET /facility_spaces/1.json
@@ -25,6 +34,7 @@ class FacilitySpacesController < ApplicationController
   # POST /facility_spaces
   # POST /facility_spaces.json
   def create
+    authorize @facility_space
     @facility_space = FacilitySpace.new(facility_space_params)
   
     # @facility_space.storage_facility = current_storage
@@ -65,7 +75,8 @@ class FacilitySpacesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+  
+  # Use callbacks to share common setup or constraints between actions.
     def set_facility_space
       @facility_space = FacilitySpace.find(params[:id])
     end

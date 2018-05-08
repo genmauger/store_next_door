@@ -18,6 +18,7 @@
         <td><%= profile.last_name %></td>
         <td><%= image_tag profile.image_url(:medium), :class => "style_image" %></td>
         <td><%= link_to 'Show', profile %></td>
+        <td><%= link_to 'Add Facility', storage_facilities_path %></td>
       </tr>
     <% end %>
   </tbody>

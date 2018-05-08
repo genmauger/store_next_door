@@ -15,6 +15,7 @@
   </thead>
 
   <tbody>
+  <% if @storage_facilities.present? %>
     <% @storage_facilities.each do |storage_facility| %>
       <tr>
         <td><%= storage_facility.street_address %></td>
@@ -26,6 +27,7 @@
         <td><%= link_to 'Show', storage_facility %></td>
 
         <td>
+
         <% if policy(storage_facility).update? %>
         <%= link_to 'Edit', edit_storage_facility_path(storage_facility) %></td>
         <td><%= link_to 'Destroy', storage_facility, method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -33,6 +35,7 @@
         </td>
         
       </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>
