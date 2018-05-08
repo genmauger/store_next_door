@@ -4,17 +4,11 @@ class FacilitySpacesController < ApplicationController
   # GET /facility_spaces
   # GET /facility_spaces.json
   def index
-    if FacilitySpace.find_by(storage_facility_id: storage_facility.id)
-      @facility_spaces = StorageFacility.where(storage_facility_id: storage_facility.id)
-    end
+    # if FacilitySpace.find_by(storage_facility_id: storage_facility.id)
+    #   @facility_spaces = FacilitySpace.where(storage_facility: storage_facility.id)
+    #   # @facility_spaces = FacilitySpace.first.storage_facility.id
+      @facility_spaces = FacilitySpace.all
   end
-
-
-  # def index
-  #   if StorageFacility.find_by(user_id: current_user.id)
-  #     @storage_facilities = StorageFacility.where(user_id: current_user.id)
-  #   end
-  # end
 
   # GET /facility_spaces/1
   # GET /facility_spaces/1.json

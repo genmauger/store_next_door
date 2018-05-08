@@ -5,7 +5,9 @@ class ProfilesController < ApplicationController
   # GET /profiles
   # GET /profiles.json
   def index
-    @profiles = Profile.all
+    if Profile.find_by(user_id: current_user.id)
+      @profiles = Profile.where(user_id: current_user.id)
+    end
   end
 
   # GET /profiles/1
