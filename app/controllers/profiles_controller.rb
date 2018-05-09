@@ -18,19 +18,17 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/new
   def new
-    authorize @profile
     @profile = Profile.new
+    authorize @profile
   end
 
   # GET /profiles/1/edit
   def edit
-    authorize @profile
   end
 
   # POST /profiles
   # POST /profiles.json
   def create
-    authorize @profile
     @profile = Profile.new(profile_params)
     @profile.user = current_user
     respond_to do |format|
@@ -47,9 +45,7 @@ class ProfilesController < ApplicationController
   # PATCH/PUT /profiles/1
   # PATCH/PUT /profiles/1.json
   def update
-
     respond_to do |format|
-      authorize @profile
       if @profile.update(profile_params)
         format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
         format.json { render :show, status: :ok, location: @profile }
@@ -72,7 +68,6 @@ class ProfilesController < ApplicationController
 
   def view_own_profile
     @user = User.find(params[:id])
-    
     if current_user != @user
       redirect_to root_path, notice: "You can't view someone else's profile"
     end
@@ -82,6 +77,7 @@ class ProfilesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_profile
       @profile = Profile.find(params[:id])
+      authorize @profile
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

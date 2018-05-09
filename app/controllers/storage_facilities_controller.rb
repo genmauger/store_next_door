@@ -1,6 +1,5 @@
 class StorageFacilitiesController < ApplicationController
-  before_action :set_storage_facility, only: [:show, :update, :destroy]
-  # before_action :edit_own_properties, only: [:edit]
+  before_action :set_storage_facility, only: [:show, :edit, :update, :destroy]
 
   # GET /storage_facilities
   # GET /storage_facilities.json
@@ -24,15 +23,12 @@ class StorageFacilitiesController < ApplicationController
 
   # GET /storage_facilities/1/edit
   def edit
-    @storage_facility = StorageFacility.find(params[:id])
     authorize @storage_facility
   end
 
   # POST /storage_facilities
   # POST /storage_facilities.json
   def create
-    authorize @storage_facility
-
     @storage_facility = StorageFacility.new(storage_facility_params)
     @storage_facility.user = current_user
 
@@ -72,13 +68,6 @@ class StorageFacilitiesController < ApplicationController
       format.json { head :no_content }
     end
   end
-
-  def edit_own_properties
-  end
-
-  # def create_facilty_space(storage_facility)
-  #   new_facility_space_path(storage_facility)
-  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
