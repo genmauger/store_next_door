@@ -5,9 +5,10 @@ class StorageFacilitiesController < ApplicationController
   # GET /storage_facilities
   # GET /storage_facilities.json
   def index
-    if StorageFacility.find_by(user_id: current_user.id)
-      @storage_facilities = StorageFacility.where(user_id: current_user.id)
-    end
+    @storage_facilities = StorageFacility.all
+    # if StorageFacility.find_by(user_id: current_user.id)
+    #   @storage_facilities = StorageFacility.where(user_id: current_user.id)
+    # end
   end
 
   # GET /storage_facilities/1
