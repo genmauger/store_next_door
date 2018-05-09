@@ -17,18 +17,19 @@
 
 <p>
   <strong>Rate:</strong>
-  <%= @facility_space.rate %>
+  <%= number_to_currency @facility_space.price_in_dollars %>
 </p>
 
 <p>
   <strong>Image data:</strong>
-  <%= @facility_space.image_data %>
+  <%= image_tag @facility_space.image_url(:medium), :class => "style_image" unless @facility_space.image.nil? %>
 </p>
 
-<p>
-  <strong>Storage facility:</strong>
-  <%= @facility_space.storage_facility %>
-</p>
+<% if user_signed_in? %>
+  <%= render '/charges/charge_form' %>
+<% else %>
+  <%= link_to 'Sign Up', new_user_registration_path %>
+<% end %>
 
 <%= link_to 'Edit', edit_facility_space_path(@facility_space) %> |
 <%= link_to 'Back', facility_spaces_path %>

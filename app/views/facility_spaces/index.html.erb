@@ -9,8 +9,6 @@
       <th>Width</th>
       <th>Length</th>
       <th>Rate</th>
-      <th>Image data</th>
-      <th>Storage facility</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,14 +19,12 @@
         <td><%= facility_space.height %></td>
         <td><%= facility_space.width %></td>
         <td><%= facility_space.length %></td>
-        <td><%= facility_space.rate %></td>
+        <td><%= number_to_currency facility_space.rate %></td>
 
         <td><%= image_tag facility_space.image_url(:medium), :class => "style_image" unless facility_space.image.nil? %></td>
 
-        <td><%= facility_space.storage_facility %></td>
         <td><%= link_to 'Show', facility_space %></td>
-        <td><%= link_to 'Edit', edit_facility_space_path(facility_space) %></td>
-        <td><%= link_to 'Destroy', facility_space, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
       </tr>
     <% end %>
   </tbody>

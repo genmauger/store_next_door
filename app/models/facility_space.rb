@@ -4,4 +4,8 @@ class FacilitySpace < ApplicationRecord
 
   include ImageUploader::Attachment.new(:image)
 
+  def price_in_dollars
+    rate.to_f
+  end
+
 end
