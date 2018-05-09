@@ -21,7 +21,7 @@
         <td><%= facility_space.length %></td>
         <td><%= number_to_currency facility_space.rate %></td>
 
-        <td><%= image_tag facility_space.image_url(:medium), :class => "style_image" unless facility_space.image.nil? %></td>
+        <td><%= image_tag facility_space.image_url(:medium), :class => "style_image" unless facility_space.image_data.nil? %></td>
 
         <td><%= link_to 'Show', facility_space %></td>
 
