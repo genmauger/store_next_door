@@ -1,5 +1,41 @@
 <h1>New Facility Space</h1>
 
-<%= render 'form', facility_space: @facility_space %>
+<%# render 'form', facility_space: @facility_space %>
+
+<%= form_with model: [@storage_facility, @facility_space], local: true do |form| %>
+
+
+  <div class="field">
+    <%= form.label :height %>
+    <%= form.text_area :height, id: :facility_space_height %>
+  </div>
+
+  <div class="field">
+    <%= form.label :width %>
+    <%= form.text_area :width, id: :facility_space_width %>
+  </div>
+
+  <div class="field">
+    <%= form.label :length %>
+    <%= form.text_area :length, id: :facility_space_length %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rate %>
+    <%= form.text_field :rate, id: :facility_space_rate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :avatar %>
+    <%= form.hidden_field :image, value: @facility_space.cached_image_data %>
+    <%= form.file_field :image, id: :photo_image_data %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+<% end %>
+
 
 <%= link_to 'Back', facility_spaces_path %>

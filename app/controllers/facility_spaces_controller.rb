@@ -6,6 +6,7 @@ class FacilitySpacesController < ApplicationController
   # GET /facility_spaces
   # GET /facility_spaces.json
   def index
+
     storage_facilities = StorageFacility.find_by(user: current_user)
 
     # all my storage facilities' spaces, the ones that I own
@@ -28,7 +29,7 @@ class FacilitySpacesController < ApplicationController
   # GET /facility_spaces/new
   def new
     @facility_space = FacilitySpace.new
-    @facility_space.storage_facility = StorageFacility.find(params[:storage_facility_id])
+    @storage_facility = StorageFacility.find(params[:storage_facility_id])
   end
 
   # GET /facility_spaces/1/edit
@@ -39,7 +40,7 @@ class FacilitySpacesController < ApplicationController
   # POST /facility_spaces.json
   def create
     @facility_space = FacilitySpace.new(facility_space_params)
-    @facility_space.storage_facility = current_user.storage_facilities.first
+    @facility_space.storage_facility = StorageFacility.find(params[:storage_facility_id])
     # @facility_space.storage_facility = current_storage
 
     respond_to do |format|
