@@ -1,4 +1,4 @@
-class Calendar < SimpleCalendar::Calendar
+class Calendar 
 
   
 
