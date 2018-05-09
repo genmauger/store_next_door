@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  resources :storage_facilities do 
+    resources :facility_spaces
+  end
   resources :facility_spaces
-  resources :storage_facilities
   resources :profiles
   resources :charges
   devise_for :users, controllers: { registrations: "registrations" }

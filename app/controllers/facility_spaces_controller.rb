@@ -39,7 +39,7 @@ class FacilitySpacesController < ApplicationController
   # POST /facility_spaces.json
   def create
     @facility_space = FacilitySpace.new(facility_space_params)
-  
+    @facility_space.storage_facility = current_user.storage_facilities.first
     # @facility_space.storage_facility = current_storage
 
     respond_to do |format|
