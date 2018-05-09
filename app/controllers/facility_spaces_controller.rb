@@ -1,14 +1,20 @@
 class FacilitySpacesController < ApplicationController
   before_action :set_facility_space, only: [ :show, :edit, :update, :destroy]
 
+  before_action :authenticate_user!
+
   # GET /facility_spaces
   # GET /facility_spaces.json
   def index
-    @storage_facilities = StorageFacility.find_by(user_id: current_user.id)
-    if FacilitySpace.find_by(storage_facility_id: @storage_facilities.id)
-    @facility_spaces = FacilitySpace.where(storage_facility_id: @storage_facilities.id)
+    storage_facilities = StorageFacility.find_by(user: current_user)
+
+    # all my storage facilities' spaces, the ones that I own
+    @facility_spaces = storage_facilities.facility_spaces
+
+    # if FacilitySpace.find_by(storage_facility: @storage_facilities)
+    # @facility_spaces = FacilitySpace.where(storage_facility: @storage_facilities)
       # @facility_spaces = FacilitySpace.all
-    end
+    # end
   end
 
   # GET /facility_spaces/1
