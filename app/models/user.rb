@@ -6,5 +6,15 @@ class User < ApplicationRecord
 
   has_one :profile
   has_many :storage_facility
+
+
+  def profile_and_image?
+    if profile.present?
+      profile.image_data.present?
+    else
+      false
+    end
+  end
+
   
 end

@@ -1,7 +1,7 @@
 <div class="navbar">
   <% if user_signed_in? %>
     <%= current_user.email %>
-      <%= image_tag current_user.profile.image_url(:medium), :class => "nav_style_image" unless current_user.profile.image.nil? %>
+      <%= image_tag current_user.profile.image_url(:medium), class: "nav_style_image" if current_user.profile_and_image?  %>
     <%= link_to 'View Available Spaces', facility_spaces_path %>
     <%= link_to 'Current Properties', storage_facilities_path(current_user.id) unless current_user.nil? %>
     <%= link_to 'Logout', destroy_user_session_path, method: :delete %>

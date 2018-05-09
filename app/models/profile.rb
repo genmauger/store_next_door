@@ -12,4 +12,5 @@ class Profile < ApplicationRecord
     [street_address, suburb, postcode, country].compact.join(', ')
   end
 
+
 end

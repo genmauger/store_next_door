@@ -22,7 +22,7 @@
 
 <p>
   <strong>Image data:</strong>
-  <%= image_tag @facility_space.image_url(:medium), :class => "style_image" unless @facility_space.image.nil? %>
+  <%= image_tag @facility_space.image_url(:medium), :class => "style_image" unless @facility_space.image_data.nil? %>
 </p>
 
 <% if user_signed_in? %>
