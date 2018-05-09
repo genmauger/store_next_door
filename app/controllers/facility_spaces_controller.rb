@@ -4,10 +4,11 @@ class FacilitySpacesController < ApplicationController
   # GET /facility_spaces
   # GET /facility_spaces.json
   def index
-    # if FacilitySpace.find_by(storage_facility_id: storage_facility.id)
-    #   @facility_spaces = FacilitySpace.where(storage_facility: storage_facility.id)
-    #   # @facility_spaces = FacilitySpace.first.storage_facility.id
-      @facility_spaces = FacilitySpace.all
+    @storage_facilities = StorageFacility.find_by(user_id: current_user.id)
+    if FacilitySpace.find_by(storage_facility_id: @storage_facilities.id)
+      @facility_spaces = FacilitySpace.where(storage_facility_id: @storage_facilities.id)
+      # @facility_spaces = FacilitySpace.all
+    end
   end
 
   # GET /facility_spaces/1
@@ -28,7 +29,6 @@ class FacilitySpacesController < ApplicationController
   # POST /facility_spaces
   # POST /facility_spaces.json
   def create
-    authorize @facility_space
     @facility_space = FacilitySpace.new(facility_space_params)
   
     # @facility_space.storage_facility = current_storage
