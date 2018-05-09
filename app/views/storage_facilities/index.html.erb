@@ -23,7 +23,7 @@
         <td><%= storage_facility.postcode %></td>
         <td><%= storage_facility.state %></td>
         <td><%= storage_facility.country %></td>
-        <td><%= image_tag storage_facility.image_url(:medium), :class => "style_image" %></td>
+        <td><%= image_tag storage_facility.image_url(:medium), :class => "style_image" unless storage_facility .image_data.nil? %></td>
         <td><%= link_to 'Show', storage_facility %></td>
 
         <td>
