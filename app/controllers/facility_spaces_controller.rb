@@ -6,7 +6,7 @@ class FacilitySpacesController < ApplicationController
   def index
     @storage_facilities = StorageFacility.find_by(user_id: current_user.id)
     if FacilitySpace.find_by(storage_facility_id: @storage_facilities.id)
-      @facility_spaces = FacilitySpace.where(storage_facility_id: @storage_facilities.id)
+    @facility_spaces = FacilitySpace.where(storage_facility_id: @storage_facilities.id)
       # @facility_spaces = FacilitySpace.all
     end
   end
