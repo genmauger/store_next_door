@@ -7,7 +7,12 @@ class StorageFacilitiesController < ApplicationController
     # if StorageFacility.find_by(user_id: current_user.id)
     #   @storage_facilities = StorageFacility.where(user_id: current_user.id)
     # end
-
+    unless params[:storage_facility].present?
+      @storage_facilities = StorageFacility.all
+    else
+      suburb = params[:suburb][:search]
+      @storage_facilities = StorageFacility.search_by_name(suburb)
+    end
   end
 
   # GET /storage_facilities/1

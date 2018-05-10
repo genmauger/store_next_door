@@ -5,7 +5,7 @@ Store Next Door is a two sided marketplace for people looking for a more accessi
 ### Webiste URL
 
 
-###Github
+### Github
 
 
 ## Considering Problem
@@ -49,15 +49,15 @@ I found Trello to be an invaluable tool for all aspects of my project. I used it
 
 My Trello board was extensive, as I used it break each task down into easily manageable steps I could focus on. For this reason, I ended up using two Trello boards. One for a planning overview, and one board to plan out all aspects of users stories.
 
-![](assets/images/screenshot/overview_trello_1.png)
+![](/app/assets/images/screenshot/overview_trello_1.png)
 
-![](assets/images/screenshot/overview_trello_3.png)
+![](/app/assets/images/screenshot/overview_trello_3.png)
 
 ## User Stories
 
-![](assets/images/screenshot/user_figma_screenshot1.png)
+![](/app/assets/images/screenshot/user_figma_screenshot1.png)
 
-![](assets/images/screenshot/user_figma_screenshot2.png)
+![](/app/assets/images/screenshot/user_figma_screenshot2.png)
 
 My user stories included four target markets: buyers, sellers, viewers, and admins.
 
@@ -146,11 +146,11 @@ I also considered some pain points of the buyer and seller, to help uncover area
 
 ### Journey of buyer
 
-![](assets/images/screenshot/user_journey_buyers.png)
+![](/app/assets/images/screenshot/user_journey_buyers.png)
 
 ### Journey of seller
 
-![](assets/images/screenshot/user_journey_sellers.png)
+![](/app/assets/images/screenshot/user_journey_sellers.png)
 
 ## Wireframes
 
@@ -172,17 +172,17 @@ I was inspired by the simple and effective layouts of the Airbnb show layout and
 
 I was inspired by Uber's extremely cimple user journey and booking process. Having seen the app used many times, I was inspired by the simple and effective booking process. I wanted to make the user journey through my website as efficient as possible, while still offering them all the necessary information needed to make an informed decision.
 
-![](assets/images/screenshot/mood_board1.png)
+![](/app/assets/images/screenshot/mood_board1.png)
 
-![](assets/images/screenshot/mood_board2.png)
+![](/app/assets/images/screenshot/mood_board2.png)
 
 ## Wireframes
 
 With my mood board completed, I then moved on to designing the wireframes for my website. 
 
-![](assets/images/screenshot/figma_mobile_wireframe.png)
+![](/app/assets/images/screenshot/figma_mobile_wireframe.png)
 
-![](assets/images/screenshot/figma_desktop_wireframe.png)
+![](/app/assets/images/screenshot/figma_desktop_wireframe.png)
 
 The wireframing process allowed me to visualise the the layout of my website. Without distractions of color or images, I could really focus on what should go where on the webpage, and think about how the user would interact with my application.
 
@@ -190,19 +190,19 @@ The wireframing process allowed me to visualise the the layout of my website. Wi
 
 I tried a few different color combinations before I began desgning. At first I was attracted to the warmer colors of websites likes Airbnb, and YouCamp. However, I don't believe these colors really fit in with my business. I felt I was more focused on providing a functional service, which didn't I felt would require colors that felt less emotional. Although, in the future I would be interested in revising this, as people often have a very strong emotional attchment to their possessions, that could possibly be reflected more accurately in different colors. 
 
-![](assets/images/screenshot/color_schemes.png)
+![](/app/assets/images/screenshot/colors_schemes.png)
 
 In the end I was inspired to create a website designed around a simple green and blue design. I felt this was properly businesslike. However, after discussing my design, I decided to reduce the use of green to just a call to action button. As my website would contain a lot of pictures, all involving many different colors, a simpler color palette would be better in the long run.
 
-![](assets/images/screenshot/final_colors.png)
+![](/app/assets/images/screenshot/final_colors.png)
 
 ## Final Designs
 
 Some of the final designs for my webpage can be found below. I have designed layouts for both mobile and desktop. I wanted to keep the design for my website as repsonsive as possible. It will scale easily, and does not require a slide out navbar.
 
-![](assets/images/screenshot/final_mobile_design.png)
+![](/app/assets/images/screenshot/final_mobile_design.png)
 
-![](assets/images/screenshot/final_desktop_design.png)
+![](/app/assets/images/screenshot/final_desktop_design.png)
 
 ### ERD
 
@@ -212,7 +212,7 @@ I was aware that the ERD could get complicated quite quickly. I tried to keep it
 
 ## Database Tables
 
-![](assets/images/screenshot/schema.png)
+![](/app/assets/images/screenshot/schema.png)
 
 ## Models
 

@@ -7,14 +7,18 @@ class FacilitySpacesController < ApplicationController
   # GET /facility_spaces.json
   def index
 
+    # @facility_spaces = FacilitySpace.all
+
     storage_facilities = StorageFacility.find_by(user: current_user)
 
     # all my storage facilities' spaces, the ones that I own
+
     if storage_facilities.nil?
       redirect_to root_path
     else
       @facility_spaces = storage_facilities.facility_spaces 
     end
+    
     # if FacilitySpace.find_by(storage_facility: @storage_facilities)
     # @facility_spaces = FacilitySpace.where(storage_facility: @storage_facilities)
       # @facility_spaces = FacilitySpace.all
