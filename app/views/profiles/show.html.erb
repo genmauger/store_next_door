@@ -37,8 +37,8 @@
   </p>
 
   <p>
-    <strong>Avatar:</strong>
-    <%= image_tag @profile.image_url(:medium), :class => "style_image" %>
+    <strong>Image:</strong>
+    <%= image_tag @profile.image_url(:medium), class: "style_image" unless @profile.image_data.nil?%>
   </p>
 
   <p>

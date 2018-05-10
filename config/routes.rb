@@ -12,8 +12,7 @@ Rails.application.routes.draw do
 
   get '/profiles/create', to: 'profiles#create'
 
-  get 'pages/calendar', to: 'pages#calendar'
+  #Redirect to personal index page showing all properties
 
-  
 
 end
