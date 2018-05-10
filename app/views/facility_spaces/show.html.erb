@@ -16,12 +16,11 @@
 </p>
 
 <p>
-  <strong>Rate:</strong>
+  <strong>Cost Per Day:</strong>
   <%= number_to_currency @facility_space.price_in_dollars %>
 </p>
 
 <p>
-  <strong>Image data:</strong>
   <%= image_tag @facility_space.image_url(:medium), :class => "style_image" unless @facility_space.image_data.nil? %>
 </p>
 

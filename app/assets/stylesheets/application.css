@@ -47,4 +47,43 @@
 .footer {
   background-color: #47869F;
   height: 2.5em;
+  height: 50px;
+}
+
+.index-head > h2 {
+  font-family: 'Gothic A1', sans-serif; 
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 3em;
+}
+
+.index-head > h1 {
+  display: flex;
+  justify-content: center;
+  padding-top: 6em;
+  padding-bottom: 2em;
+  font-size: 2em;
+}
+
+.link-decoration {
+  text-decoration: none;
+}
+
+.link-decoration:hover{
+ color:#57a22b!important;
+ background:none;
+}
+
+.storage-facility-display {
+  display: flex;
+  flex-direction: row;
+}
+
+.storage-facility-display > div {
+  flex-direction: column;
+}
+
+.charge-header {
+  font-family: 'Gothic A1', sans-serif;
 }

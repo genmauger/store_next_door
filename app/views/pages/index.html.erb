@@ -1,8 +1,12 @@
-<h1>Store Next Door</h1>
+<div class="index-head">
+  <h1>Store Next Door</h1>
 
-<p><%= link_to 'View Available Spaces', facility_spaces_path %></p>
+  <h2>
+    <%= link_to 'Find my Storage', storage_facilities_path, class: "link-decoration" %>
+  </h2>
 
-<!--Link to current facilities and bookings here-->
+</div>
 
-<%= link_to 'Current Properties', storage_facilities_path(current_user.id) unless current_user.nil? %>
+
+
 

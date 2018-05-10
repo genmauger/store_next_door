@@ -3,6 +3,7 @@
     <%= current_user.email %>
       <%= image_tag current_user.profile.image_url(:medium), class: "nav_style_image" if current_user.profile_and_image?  %>
 
+    <%= link_to 'Home', root_path %>
     <%= link_to 'Current Properties', storage_facilities_path(current_user.id) unless current_user.nil? %>
     <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
     <% else %>
