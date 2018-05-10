@@ -13,6 +13,7 @@ class StorageFacilitiesController < ApplicationController
     else
       @storage_facilities = StorageFacility.all.order("created_at DESC")
     end
+
   end
 
   # GET /storage_facilities/1
