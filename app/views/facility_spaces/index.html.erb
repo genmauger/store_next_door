@@ -24,6 +24,7 @@
         <td><%= image_tag facility_space.image_url(:medium), :class => "style_image" unless facility_space.image_data.nil? %></td>
 
         <td><%= link_to 'Show', facility_space %></td>
+        <td><%= link_to 'Destroy', facility_space, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
       </tr>
     <% end %>
