@@ -7,6 +7,7 @@ Store Next Door is a two sided marketplace for people looking for a more accessi
 
 ### Github
 
+https://github.com/genmauger/store_next_door
 
 ## Considering Problem
 
