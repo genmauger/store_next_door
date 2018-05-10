@@ -10,7 +10,8 @@ Rails.application.routes.draw do
 
   root 'pages#index'
 
-  # get '/profiles/create', to: 'profiles#create'
+  get '/contact', to: 'pages#contact'
+  post '/contact', to: 'pages#contact_email'
 
   #Redirect to personal index page showing all properties
 
