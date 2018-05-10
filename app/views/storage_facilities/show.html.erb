@@ -35,9 +35,10 @@
       <%= image_tag ("https://maps.googleapis.com/maps/api/staticmap?center=#{@storage_facility.latitude},#{@storage_facility.longitude}&zoom=12&size=400x200&markers=color:red%7Clabel:#{@storage_facility.street_address.first}%7C#{@storage_facility.latitude},#{@storage_facility.longitude}&key=AIzaSyAY6SDoNkrh8eJwG-lZWKK1d2RiNvXbPmg") %>
   </p>
 
-  <p><%= link_to 'Add Space', new_storage_facility_facility_space_path(storage_facility_id: @storage_facility.id) %></p>
+  <p><%= link_to 'Property Spaces', storage_facility_facility_spaces_path(@storage_facility) %></p>
 
-  <p><%= link_to 'View My Spaces', facility_spaces_path(@storage_facility) %></p>
+
+  <p><%= link_to 'Add Space', new_storage_facility_facility_space_path(storage_facility_id: @storage_facility.id) %></p>
 
 <%= link_to 'Edit', edit_storage_facility_path %> |
 <%= link_to 'Back', storage_facilities_path %> |
