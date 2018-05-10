@@ -1,6 +1,6 @@
 module StorageFacilitiesHelper
 
-  def all_storage_facilities_map(storage_facilities, zoom=15)
+  def all_storage_facilities_map(storage_facilities, zoom=14)
     markers_string = ""
 
     storage_facilities.each do |storage_facility|

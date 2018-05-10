@@ -13,4 +13,9 @@ class StorageFacility < ApplicationRecord
     [street_address, suburb, postcode, state, country].compact.join(', ')
   end
 
+  def self.search(search)
+    where("suburb LIKE ? OR postcode LIKE ? OR state LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%") 
+  end
+
 end
+

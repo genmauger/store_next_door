@@ -7,11 +7,11 @@ class StorageFacilitiesController < ApplicationController
     # if StorageFacility.find_by(user_id: current_user.id)
     #   @storage_facilities = StorageFacility.where(user_id: current_user.id)
     # end
-    unless params[:storage_facility].present?
-      @storage_facilities = StorageFacility.all
+    @storage_facilities = StorageFacility.all
+    if params[:search]
+      @storage_facilities = StorageFacility.search(params[:search]).order("created_at DESC")
     else
-      suburb = params[:suburb][:search]
-      @storage_facilities = StorageFacility.search_by_name(suburb)
+      @storage_facilities = StorageFacility.all.order("created_at DESC")
     end
   end
 
