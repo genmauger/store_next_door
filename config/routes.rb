@@ -8,9 +8,14 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "registrations" }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root 'pages#index'
+  authenticated :user do
+    root to: 'pages#index', as: :authenticated_root
+  end
 
-  # get '/profiles/create', to: 'profiles#create'
+  root to: 'pages#index'
+
+  get '/contact', to: 'pages#contact'
+  post '/contact', to: 'pages#contact_email'
 
   #Redirect to personal index page showing all properties
 

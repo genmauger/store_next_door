@@ -300,9 +300,4 @@ There are many future developments I would like to make to this project. the fir
 - Allow for omniauth
 
 
-## Collaboration
 
-One of the things I enjoy about coding is the chance to work with other people, to share ideas and different solutions to a problem. Although this was an individual project, it wouldn't have been possible for me to get to this stage without help from my fellow students. 
-
-
-Timetable

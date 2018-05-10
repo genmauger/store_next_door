@@ -4,9 +4,6 @@ class StorageFacilitiesController < ApplicationController
   # GET /storage_facilities
   # GET /storage_facilities.json
   def index
-    # if StorageFacility.find_by(user_id: current_user.id)
-    #   @storage_facilities = StorageFacility.where(user_id: current_user.id)
-    # end
     @storage_facilities = StorageFacility.all
     if params[:search]
       @storage_facilities = StorageFacility.search(params[:search]).order("created_at DESC")
