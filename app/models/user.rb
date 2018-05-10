@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_one :profile
   has_many :storage_facility
+  has_many :bookings
+  has_many :invoices
 
 
   def profile_and_image?
