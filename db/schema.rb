@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180507141219) do
+ActiveRecord::Schema.define(version: 20180510075106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.date "date_from"
+    t.date "date_to"
+    t.bigint "user_id"
+    t.bigint "storage_facility_id"
+    t.bigint "facility_spaces_id"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["facility_spaces_id"], name: "index_bookings_on_facility_spaces_id"
+    t.index ["storage_facility_id"], name: "index_bookings_on_storage_facility_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
 
   create_table "facility_spaces", force: :cascade do |t|
     t.text "height"
@@ -25,6 +39,15 @@ ActiveRecord::Schema.define(version: 20180507141219) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["storage_facility_id"], name: "index_facility_spaces_on_storage_facility_id"
+  end
+
+  create_table "invoices", force: :cascade do |t|
+    t.date "payment_date"
+    t.decimal "charge"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_invoices_on_user_id"
   end
 
   create_table "meetings", force: :cascade do |t|
@@ -85,7 +108,11 @@ ActiveRecord::Schema.define(version: 20180507141219) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "facility_spaces", column: "facility_spaces_id"
+  add_foreign_key "bookings", "storage_facilities"
+  add_foreign_key "bookings", "users"
   add_foreign_key "facility_spaces", "storage_facilities"
+  add_foreign_key "invoices", "users"
   add_foreign_key "profiles", "users"
   add_foreign_key "storage_facilities", "users"
 end
