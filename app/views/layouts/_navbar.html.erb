@@ -1,7 +1,9 @@
 <div class="navbar">
   <% if user_signed_in? %>
     <%= current_user.email %>
+    <%= link_to profiles_path do %>
       <%= image_tag current_user.profile.image_url(:medium), class: "nav_style_image" if current_user.profile_and_image?  %>
+    <% end %>
 
     <%= link_to 'Home', root_path %>
     <%= link_to 'Current Properties', storage_facilities_path(current_user.id) unless current_user.nil? %>

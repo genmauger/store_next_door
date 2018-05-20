@@ -1,25 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Profiles</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<h1>Profile</h1>
 
   <tbody>
     <% @profiles.each do |profile| %>
-      <tr>
-        <td><%= profile.first_name %></td>
-        <td><%= profile.last_name %></td>
-        <td><%= image_tag profile.image_url(:medium), :class => "style_image" unless profile.image_data.nil? %></td>
-        <td><%= link_to 'Show', profile %></td>
-        <td><%= link_to 'Add Facility', storage_facilities_path %></td>
-      </tr>
+        <p><%= profile.first_name %></p>
+        <p><%= profile.last_name %></p>
+        <p><%= profile.mobile %></p>
+        <p><%= profile.street_address %></p>
+        <p><%= profile.suburb %></p>
+        <p><%= profile.postcode %></p>
+        <p><%= profile.country %></p>
+        <p><%= image_tag profile.image_url(:medium), :class => "style_image" unless profile.image_data.nil? %></p>
+
+        <p>
+          <%= image_tag ("https://maps.googleapis.com/maps/api/staticmap?center=#{profile.latitude},#{profile.longitude}&zoom=12&size=400x200&markers=color:red%7Clabel:#{profile.first_name.first}%7C#{profile.latitude},#{profile.longitude}&key=AIzaSyAY6SDoNkrh8eJwG-lZWKK1d2RiNvXbPmg") %>
+        </p>
+
+        <%= link_to 'Edit', edit_profile_path(profile) %> |
+        <%= link_to 'Back', profiles_path %> |
+        <%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %> |
+        <%= link_to 'Add Facility', storage_facilities_path %>
+
     <% end %>
   </tbody>
 </table>
