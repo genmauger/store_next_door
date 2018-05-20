@@ -301,3 +301,41 @@ There are many future developments I would like to make to this project. the fir
 
 
 
+Problem
+
+S 
+
+Seller
+- Empty space is an unused asset
+- Looking for extra/passive streams of income
+
+
+Solution: Store Next Door
+
+- Bring these groups together
+- Less complex, faster, more affordable service
+- Store your things nearby, at reduced rates
+- Sellers get to turn their unused space into income stream
+
+How
+
+- Limited functionality - keep app lightweight an simple
+- Do two things - buy and list
+- Uber - fast checkout process
+- As few steps as possible
+- Search, view, book, buy
+- seller: Log in, list
+
+Pain Points 
+
+- Table name conventions!
+- Storage facility, and facility storage
+- "/storage_facilities/:storage_facility_id/facility_spaces/:id/edit(.:format)"
+- Deploying to heroku
+
+
+
+
+
+
+

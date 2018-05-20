@@ -5,6 +5,15 @@
     <%= link_to 'Find my Storage', storage_facilities_path, class: "link-decoration" %>
   </h2>
 
+  <p><%= @current_facility %></p>
+
+  <p>
+    <% @current_facility.each do |s| %>
+      <p><%= s.state %></p>
+      <p><%= s.street_address %></p>
+    <% end %>
+  </p>
+
 </div>
 
 
