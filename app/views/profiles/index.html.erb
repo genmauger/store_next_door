@@ -18,11 +18,25 @@
         </p>
 
         <%= link_to 'Edit', edit_profile_path(profile) %> |
-        <%= link_to 'Back', profiles_path %> |
         <%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %> |
         <%= link_to 'Add Facility', storage_facilities_path %>
 
     <% end %>
+
+    <h2>Storage Facilities</h2>
+
+    <p>
+      <% if user_signed_in? %>
+        <% @current_facility.each do |s| %>
+          <p>
+            <%= s.street_address %>
+            <%= s.state %>
+            <%= link_to 'Show', storage_facility_path(s.id) %>
+          </p>
+        <% end %>
+      <% end %>
+    </p>
+
   </tbody>
 </table>
 

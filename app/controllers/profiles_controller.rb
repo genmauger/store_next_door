@@ -8,6 +8,8 @@ class ProfilesController < ApplicationController
     if Profile.find_by(user_id: current_user.id)
       @profiles = Profile.where(user_id: current_user.id)
     end
+      @current_user = current_user
+      @current_facility = current_user.storage_facility
   end
 
   # GET /profiles/1
