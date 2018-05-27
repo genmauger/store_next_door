@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :storage_facilities do 
-    resources :facility_spaces
+    resources :facility_spaces do
+      resources :bookings
+    end
   end
   resources :facility_spaces
   resources :profiles
@@ -13,7 +15,5 @@ Rails.application.routes.draw do
   end
 
   root to: 'pages#index'
-
-  get '/bookings/booking', to: 'bookings#booking'
 
 end

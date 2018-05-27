@@ -13,6 +13,10 @@ class BookingsController < ApplicationController
   #And the person who it is being booked from
   #First display details of person who owns property
 
+  def show
+
+  end
+
   private
 
   def booking_params
