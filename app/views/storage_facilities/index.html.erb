@@ -2,7 +2,7 @@
 
 <h1>Storage Facilities</h1>
 
-<div class=".storage-facility-display">
+<div class="storage-facility-display">
   <div>
   <% if @storage_facilities.present? %>
     <% @storage_facilities.each do |storage_facility| %>
@@ -11,14 +11,6 @@
         <td><%= storage_facility.postcode %></td>
         <td><%= image_tag storage_facility.image_url(:medium), :class => "style_image" unless storage_facility.image_data.nil? %></td>
         <td><%= link_to 'Show', storage_facility %></td>
-
-        <td>
-
-        <% if policy(storage_facility).update? %>
-        <%= link_to 'Edit', edit_storage_facility_path(storage_facility) %></td>
-        <td><%= link_to 'Destroy', storage_facility, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% end %>
-        </td>
         
       </tr>
     <% end %>
@@ -33,11 +25,18 @@
     <%= submit_tag "Search", :name => nil %>
 <% end %>
 
-
-  <p><%= all_storage_facilities_map(@storage_facilities, 10) %></p>
-
 <br>
 
-<% if user_signed_in? %>
-  <%= link_to 'New Storage Facility', new_storage_facility_path %>
-<% end %>
+<p><%= all_storage_facilities_map(@storage_facilities, 10) %></p>
+
+<!--
+<p>
+
+  <% @not_my_storage.each do |n| %>
+    <p><%= n.street_address %></p>
+    <p><%= image_tag n.image_url(:medium), :class => "style_image" unless n.image_data.nil? %></p>
+    <p><%= link_to 'Show', storage_facility_path(n.id) %></p>
+  <% end %>
+
+</p>
+-->

@@ -2,8 +2,10 @@ class BookingsController < ApplicationController
 
   def booking
     # @booking = Booking.new
-    @facility_space = StorageFacility.find(6).user_id
-    @current_users = User.find(@facility_space).profile.first_name
+    # @facility_space = StorageFacility.find(6).user_id
+    # @current_users = User.find(@facility_space).profile.first_name
+    @current_user = current_user
+    # @facility_space_id = FacilitySpace.find(params[:id])
   end
 
   #To make a new booking:

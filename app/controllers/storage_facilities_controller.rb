@@ -11,6 +11,10 @@ class StorageFacilitiesController < ApplicationController
       @storage_facilities = StorageFacility.all.order("created_at DESC")
     end
 
+    @not_my_storage = StorageFacility.where.not(user_id: current_user)
+
+    #If the user is signed in, we only want to display properties not owned by current user
+
   end
 
   # GET /storage_facilities/1
